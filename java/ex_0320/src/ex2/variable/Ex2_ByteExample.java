@@ -10,5 +10,6 @@ public class Ex2_ByteExample {
 		byte var2 = 127;
 		// byte var3 = 128;
 		// Day2
+		// Change data
 	}
 }
