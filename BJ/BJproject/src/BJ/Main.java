@@ -5,16 +5,19 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int h = sc.nextInt();
+		int n1 = sc.nextInt();
+		int n2 = sc.nextInt();
+		int n3 = sc.nextInt();
 		
-		int m = sc.nextInt();
-		
-		int ct = sc.nextInt();
-		
-		int fh = h; int fm = m+ct; 
-		fh += fm/60; 
-		fm %= 60;
-		fh %= 24;
-		System.out.printf("%d %d",fh,fm);
+		if (n1==n2 && n2==n3) {
+			System.out.println(10000+(n1*1000));
+		} else if (n1==n2 || n1==n3) {
+			System.out.println(1000+(n1*100));
+		} else if (n2==n3) {
+			System.out.println(1000+(n2*100));
+		} else {
+			int max = Math.max(n1,Math.max(n2, n3));
+			System.out.println(max*100);
+		}
 	}
 }
