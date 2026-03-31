@@ -10,7 +10,7 @@ public class PenMain {
 		System.out.println("리필된 잉크 잔량 : " + fp.getAmount());
 		
 		SharpPen sp = new SharpPen(3, 5);
-		System.out.println("잉크의 잔량 : " + sp.amount);
-		System.out.println("펜촉의 두께 : " + sp.width);
+		System.out.println("잉크의 잔량 : " + sp.getAmount());
+		System.out.println("펜촉의 두께 : " + sp.getWidth());
 	}
 }

@@ -194,3 +194,69 @@ ballPen 클래스
 FountainPen 클래스
 - BallPen 클래스를 상속
 - 만년필은 잉크를 채울 수 있으니 refill(int n) 메서드를 작성한다.
+
+-----------------------------------------------------
+
+final (상수)
+값을 넣은 다음 변경할 수 없다.
+
+패키지
+단순히 클래스를 분리하는 용도가 아니라 클래스별 구분자 역할도 한다.
+패키지도 계층구조로 만들 수 있다.
+
+보통 회사 도메인의 역순으로 패키지 이름을 정한다.
+도트(.)를 기준으로 계층이 생긴다.
+com.kumho.tire
+
+클래스를 만들면서 다른 클래스를 필드로 사용할 수 있다.
+
+싱글톤 패턴
+
+객체를 메모리에 한번만 올리고 올라간 객체를 계속 사용하는 방식
+1. 생성자를 private로 정의해서 외부에서 호출하지 못하게 한다.
+2. 클래스 내부에서 static으로 객체를 하나 생성한다
+3. 클래스 내부에서 만든 객체를 사용할 수 있는 메서드를 정의한다.
+private static final Singleton instance = new Singleton();
+private Singleton(){}
+public static Singleton getInstance() { return instance; };
+
+상속
+부모 클래스의 필드나 메서드를 자식 클래스에서 사용할 수 있는 것
+자식 클래스가 상속받을 클래스를 고른다.
+
+오버로딩(overloading)
+메서드의 중복 정의
+오버라이딩(overriding)
+메서드의 재정의
+
+Employee 클래스
+필드
+- name
+메서드
+- getPay() : 0을 반환
+RegularEmployee 클래스
+필드
+- salary
+getPay()를 오버라이딩하여 월급 반환하기
+partTImeEmployee 클래스
+필드
+- 시급
+- 근무시간
+getPay() 오버라이딩하여 급여 반환
+Main 각 직원의 이름과 급여 출력
+
+클래스 타입변환
+- 상속관계에서만 타입변환이 가능
+자동타입변환 : 자식 -> 부모타입
+- 자식클래스에 정의한 멤버를 사용할 수 없다.
+강제타입변환 : 부모타입 -> 자식타입
+- 자식클래스에 정의한 멤버를 사용할 수 있다.
+
+Payment클래스
+메서드
+pay(int amount); : xx원을 결제합니다.
+CardPayment, KakaoPayment를 상속받는다.
+각 클래스에서 pay 메서드 오버라이딩
+
+Animal 클래스
+메서드 : sound();

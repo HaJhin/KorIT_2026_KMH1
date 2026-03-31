@@ -10,6 +10,6 @@ public class FountainPen extends BallPen {
 	
 	public void refill(int n) {
 		System.out.println("잉크 충전!");
-		amount = n;
+		super.setAmount(n);
 	}
 }

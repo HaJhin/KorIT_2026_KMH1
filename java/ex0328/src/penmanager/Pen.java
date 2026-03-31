@@ -1,7 +1,7 @@
 package penmanager;
 
 public class Pen { // 최상위 부모 클래스
-	int amount;
+	private int amount;
 
 	public Pen(int amount) {
 		this.amount = amount;
