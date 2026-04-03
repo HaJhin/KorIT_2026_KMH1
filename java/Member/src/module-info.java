@@ -1,0 +1,3 @@
+module Member {
+	exports member;
+}

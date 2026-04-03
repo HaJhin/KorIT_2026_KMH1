@@ -313,4 +313,64 @@ RocketDelivery, StorePickup 클래스
 로켓배송은 로켓배송을 시작합니다
 매장수령은 매장에서 직접수령합니다
 
+Object : 모든 클래스의 부모 클래스
 
+Arrays.toString(배열)
+
+sealed : 봉인 클래스
+permit : 내가 허용한 클래스만 상속할 수 있게 한다.
+
+public sealed class A permit B,C {}
+
+인터페이스
+ㄴ 동작에 대한 가이드라인 제공
+같은 범주에 있는 것들이 아니어도 됨
+추상 클래스와 마찬가지로 직접 객체 생성 불가능
+인터페이스를 구현할 클래스가 있어야함
+
+class Impl implements 인터페이스명 {}
+추상 메서드를 반드시 오버라이딩 해야함
+다중 상속이 가능
+상속은 인터페이스끼리만 가능
+
+중첩클래스
+1- 클래스 내부에서만 쓰는 전용 객체
+정적 내부 클래스
+내부 클래스인데 스태틱이 붙은 형태
+바깥 개체에 소속된 내부 클래스처럼 보이지만 실제로는 바깥 객체 없이도
+독립적으로 만들 수 있는 내부 클래스
+
+RemoteControl 클래스 만들기
+필드
+- String power "OFF"로 초기화하기
+Button 인스턴스 내부 클래스
+메서드 press()
+- 외부 클래스의 power 값을 "ON"으로 바꾸고 전원을 켭니다 출력
+Main에서 RemoteControl 객체 생성 후 Button 객체를 생성해 press()
+메서드 호출
+마지막에 power값도 출력
+
+Java의 모듈 시스템을 이용해 회원 등록 프로그램 만들기
+member module
+member 패키지
+Member 클래스
+
+service module
+service 패키지
+MemberService 클래스
+메서드
+void register(Member member)
+- "회원 등록을 시작합니다."
+- "회원 이름 : XXX"
+- "회원 나이 : XX"
+- "회원 등록 완료"
+
+app.module
+app 패키지
+Main 클래스
+키보드에서 사용자의 이름과 나이를 입력받으세요
+입력받은 이름과 나이를 사용하여 Member 객체를 생성하세요
+MemberService 객체를 만들어 register()를 이용해 회원 등록하기
+
+모듈 의존 관계
+app.module -> service.module -> member.module
