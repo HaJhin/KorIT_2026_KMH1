@@ -18,5 +18,8 @@ public class Main {
 		MeberService memberService = new MeberService();
 		
 		memberService.register(member);
+		
+		// 성인인지 확인하는 checkAdult() 메서드 만들기
+		memberService.checkAdult(member);
 	}
 }

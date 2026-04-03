@@ -5,6 +5,7 @@ public class Member {
 	private int age;
 	
 	// 생성자
+	// this : 해당 메서드를 호출한 객체의 정보
 	public Member(String name, int age) {
 		super();
 		this.name = name;
