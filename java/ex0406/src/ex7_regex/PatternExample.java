@@ -49,7 +49,7 @@ public class PatternExample {
 		
 		boolean result3 = Pattern.matches(regExp2, str2);
 		
-		System.out.println(result3);
+		// System.out.println(result3);
 		
 		// 이메일 형식 검사
 		// 아이디 부분 : 영문,숫자
@@ -58,6 +58,23 @@ public class PatternExample {
 		String emailPattern = "\\w+@\\w+\\.(com|net|ai)";
 		String email = "a123@naver.com";
 		
-		System.out.println(email.matches(emailPattern));
-	}
+		// System.out.println(email.matches(emailPattern));
+		
+		String[] arr = {"123","abc","4567","a1b2"};
+		String regExp3 = "[0-9]+";
+		for(String s : arr) {
+			if (s.matches(regExp3)) {
+				System.out.println(s);
+			} // if ed
+		} // for ed
+		
+		String[] arr2 = {"홍길동","Tom","김철수","a1","김이박조길동"};
+		// 한글만, 2~5글자
+
+		String arrPattern = "[가-힣]{2,5}";
+		for (String s : arr2) {
+			if (s.matches(arrPattern)) System.out.println(s);
+		} // for ed
+		
+	} // main ed
 }
