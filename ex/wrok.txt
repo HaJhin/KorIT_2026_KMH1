@@ -1,0 +1,28 @@
+Payment 인터페이스
+메서드
+- void pay();
+
+CardPayment 클래스
+KakaoPay 클래스
+
+PaymentProcessor<제네릭> zmffotm
+필드
+- T payment
+생성자를 통해 초기화
+
+메서드
+process() : 필드가 가지고 있는 pay() 실행하기
+
+Main에서 각 결제 방법에 대한 process 실행
+
+----------------
+
+Animal 클래스
+Animal을 상속받는 Dog,Cat 클래스 만들기
+
+AnimalPrint 클래스 만들기
+메서드
+Animal 클래스를 상속받는 클래스의 제네릭 타입을가진 리스트를 외부에서 받아서
+출력하는 printAnimals 만들기
+
+Main에서 Dog,Cat 리스트를 만들어서 메서드로 전달하기
