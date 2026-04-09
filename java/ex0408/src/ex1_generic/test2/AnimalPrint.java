@@ -6,7 +6,7 @@ public class AnimalPrint {
 	
 	public void printAnimals(List<? extends Animal> list) {
 		for (Animal obj : list) {
-			System.out.println(obj);
+			obj.speak();
 		}
 	}
 }
