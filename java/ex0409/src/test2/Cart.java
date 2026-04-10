@@ -21,6 +21,10 @@ public class Cart {
 	
 	// 2.장바구니 전체 출력
 	public void printCart() { 
+		if (listP.isEmpty()) {
+			System.out.println("장바구니는 비어있습니다.");
+			return;
+		}
 		for (Product p : listP) {
 			System.out.println(p.toString());
 		}
