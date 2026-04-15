@@ -10,20 +10,12 @@ public class ProductService {
 	
 	// 1. 상품 추가
 	public void addProduct(Product product) {
-		if (!productList.isEmpty()) {
-			for (Product p : productList) {
-				if (p.getCode().equals(product.getCode())) {
-					System.out.println("이미 존재하는 상품입니다.");
-					break;
-				} else {
-					productList.add(product);
-					System.out.println("상품 추가 성공");
-				} // if else ed
-			} // for ed
-		} else {
-			productList.add(product);
-			System.out.println("상품 추가 성공");
-		} // if else ed
+		if (productList.contains(product)) {
+			System.out.println("이미 존재하는 상품입니다.");
+			return;
+		}
+		productList.add(product);
+		System.out.println("상품 추가 성공");
 	} // addProduct ed
 	
 	// 2. 전체 상품 출력
@@ -60,24 +52,26 @@ public class ProductService {
 	
 	// 5. 조건에 맞는 상품 조회
 	public void findProductsByCondition(Predicate<Product> predicate) {
+		boolean stock = false;
 		for (Product p : productList) {
 			if (predicate.test(p)) {
 				System.out.println(p.toString());
-				return;
+				stock = true;
 			};
 		} // for ed
-		System.out.println("상품이 존재하지 않습니다.");
+		if (!stock) System.out.println("상품이 존재하지 않습니다.");
 	} // findProductsByCondition ed
 	
 	// 6. 조건에 맞는 상품 제거
 	public void deleteProductsByCondition(Predicate<Product> predicate) {
+		boolean stock = false;
 		for (Product p : productList) {
 			if (predicate.test(p)) {
 				productList.remove(p);
-				return;
+				stock = true;
 			};
 		} // for ed
-		System.out.println("상품이 존재하지 않습니다.");
+		if (!stock) System.out.println("상품이 존재하지 않습니다.");
 	} // deleteProductsByCondition ed
 	
 } // class ed

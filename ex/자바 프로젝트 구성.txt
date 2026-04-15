@@ -773,3 +773,32 @@ x -> x;
 매개변수에 함수를 전달
 반환값으로 함수를 반환
 
+------------------------------
+함수형 인터페이스
+람다식을 만든다 : 추상메서드를 오버라이딩 한다.
+
+Function<T,R>
+- R apply(T t) : 매개변수가 1개고 반환값이 있는 메서드
+
+Consumer
+- void accept(T t) : 매개변수가 1개, 반환값이 없는 메서드
+
+Supplier
+- T get() : 매개변수가 없고 반환값이 있는 메서드
+
+Predicate
+- boolean test(T t) : 매개변수가 1개, 반환값이 논리형인 메서드
+
+BiConsumer<T,U>
+BiPredicate<T,U>
+BiFunction<T,U,R>
+
+람다식의 합성과 결합
+Function
+f.andThen(g) : f를 실행하고 g를 실행함
+f.compose(g) : g를 실행하고 f를 실행함
+
+Predicate
+f.and(g) : f와 g의 결과가 참이어야 true 반환
+f.or(g) : f또는 g의 결과가 참이어야 true 반환
+f.negate() : true -> false, false -> true 로 전환
