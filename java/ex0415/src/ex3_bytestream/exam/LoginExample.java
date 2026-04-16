@@ -30,7 +30,7 @@ public class LoginExample {
 		
 		if (id.equals(memberId) && pw.equals(memberPw)) {
 			System.out.println("로그인 성공");
-		} else System.out.println("없는 아이디 또는 틀린 비밀번호 입니다.");
+		} else System.out.println("없는 아이디 또는 틀린 비밀번호 입니다. ");
 		
 	}
 }
