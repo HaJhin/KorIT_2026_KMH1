@@ -609,9 +609,32 @@ END
 MySQL의 반복문은 일반 SQL에서는 사용 불가능.
 주로 프로시저 안에서 사용
 반복문의 종류
-LOOP : 무한 반복 기반
+
 WHILE : 조건이 참일동안 반복
+begin
+ 변수 선언
+ while 조건 do
+	반복실행할 문장
+	set을 변수값 변경
+ end while
+end
+
 REPEAT : 최소 한번 실행 후 검사
+do - while과 사용법이 같다.
+repeat
+	반복실행할 명령
+until 조건 -> 참이 되면 종료
+end repeat
+
+LOOP : 무한 반복 기반. 종료 조건 명시해야 함.
+- 라벨을 달아야 함
+
+라벨:loop
+	반복실행할 명령
+	if 조건 then
+		leave 라벨
+	end if
+end loop
 
 반복문을 사용하는 구조
 변수 : 반복 회수를 저장
@@ -619,4 +642,32 @@ REPEAT : 최소 한번 실행 후 검사
 SET : 변수 증가
 LEAVE : 반복 종료
 ITELRATE : 다음 반복으로 이동
+
+ITERATE -> continue
+- 현재 반복을 중단하고 다음 반복으로 바로 이동하는 명령어
+
+MySQL의 예외처리
+Handler
+- Procedure 안에서 에러, 경고, 조회 결과 없음 같은 상황을 처리하는 예외처리 문법
+- 프로시저 실행 중 문제가 생겼을 때 프로시저가 바로 중단되지 않도록 처리 방법을 정해두는 문법
+
+에러 처리 : 중복된 PK를 INSERT 한 경우
+조회 결과 없음 처리 : SELECT ... INTO의 결과가 없는 경우
+커서 종료 처리 : 더 이상 읽을 데이터가 없는 경우
+ㄴ CURSOR : SELECT 결과를 한 줄씩 꺼내서 처리하는 기능
+
+기본문법
+DECLARE 핸들러타입 HANDLER FOR 예외
+BEGIN
+예외처리
+END;
+
+핸들러 타입 종류
+CONTINUE : 에러 처리 후 다음 문장 계속 실행
+EXIT : 에러 처리 후 BEGIN - END 블록 종료
+
+예외 종류
+SQLEXCEPTION : 대부분의 SQL 에러
+SQLWARNING : SQL 경고
+NOT FOUND : 조회 결과 없음
 
