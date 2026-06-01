@@ -102,3 +102,4 @@ UNION, DISTINCT, ORDER BY, GROUP BY가 빈번한 컬럼이면 고려
 디스크 구성 설계
 
 SQLD, ADSP -> DB 관련 자격증
+
