@@ -418,7 +418,7 @@ member_pkg.get_member();
 member_pkg.get_count();
 
 트리거
-- INSERT,UPDATE,DELETE문이 테이블에 대해 실해됐을 때 자동으로 수행되는 프로시저
+- INSERT,UPDATE,DELETE문이 테이블에 대해 실행됐을 때 자동으로 수행되는 프로시저
 
 CREATE OR REPLACE TRIGGER 트리거명
 [시점][이벤트] ON 테이블명
