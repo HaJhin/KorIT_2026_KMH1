@@ -1,0 +1,88 @@
+/* 기본 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #111; /* 묵직한 밴드 감성의 어두운 배경 */
+    color: #fff;
+}
+
+/* 헤더 레이아웃 (가로 정렬) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    background-color: #222;
+    position: sticky; /* 스크롤해도 상단에 고정되도록 합니다 */
+    top: 0;
+    z-index: 100;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 섹션 공통 스타일 */
+section {
+    padding: 80px 20px;
+    text-align: center; /* 글자들을 예쁘게 중앙 정렬해 줍니다 */
+    max-width: 1200px;
+    margin: 0 auto; /* 상자 자체를 화면 중앙으로 배치 */
+}
+
+/* 메인 히어로 섹션 */
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-bg.jpg') no-repeat center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* 멤버 카드 레이아웃 (가로 배열 배치) */
+.member-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.member-card {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    width: 250px;
+    border: 1px solid #333;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #050505;
+    color: #777;
+    font-size: 0.9rem;
+}
