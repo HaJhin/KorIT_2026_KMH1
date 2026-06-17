@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .special {
+            color: blue;
+        }
+
+        /* !important : css 우선순위를 강제로 가장 높게 만드는 키워드
+         남용 시 유지보수가 어려워지므로 남용 자제 */
+        p {
+            color: red !important;
+        }
+    </style>
+</head>
+<body>
+    <p class="text" id="special"> 이 문장은 어떤 색으로 표시되는가? </p>
+</body>
+</html>
