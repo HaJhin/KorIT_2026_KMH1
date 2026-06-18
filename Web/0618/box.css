@@ -1,0 +1,162 @@
+section {
+    border: 1px dashed black;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: white;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.a {
+    background-color: greenyellow;
+}
+
+.b {
+    background-color: blueviolet;
+}
+
+.c {
+    background-color: darkblue;
+}
+
+.d {
+    background-color: rosybrown;
+}
+
+.e {
+    background-color: aqua;
+}
+
+.f {
+    background-color: bisque;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    /* row가 기본값임 */
+    flex-direction: row;
+    border-bottom: 1px dashed gray;
+}
+
+.rowReverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dashed gray;
+}
+
+.columnReverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.wrapReverse {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-demo {}
+
+.stretch {
+    display: flex;
+    align-items: stretch;
+}
+
+.ai-flex-start {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ai-flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.o1 {
+    order: 1;
+}
+
+.o2 {
+    order: 2;
+}
+
+.o3 {
+    order: 3;
+}
+
+.o4 {
+    order: 4;
+}
+
+.f1 {
+    flex-grow : 1
+}
+.f2 {
+    flex-grow : 1
+}
+.f3 {
+    flex-grow : 1
+}
+.f4 {
+    flex-grow : 1
+}
+
+.a1{
+    align-self: flex-start;
+}
+
+.a2{
+    align-self: flex-end;
+}
+
+/* stretch는 높이를 지정하지 않아야 적용이 된다. */
+.a3{
+    align-items: stretch;
+}
