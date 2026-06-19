@@ -27,3 +27,24 @@ nav ul {
     justify-content: center;
     gap: 20px;
 }
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+section {
+    flex: 7;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+aside {
+    flex : 3;
+    background-color: #dfe6e9;
+    padding: 20px;
+    border-radius: 8px;
+}

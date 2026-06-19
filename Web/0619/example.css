@@ -1,0 +1,115 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: #f5f6f8;
+    font-family: sans-serif;
+    padding: 40px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.board-header {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #2d6a4f;
+}
+
+.search-box {
+    padding: 8px 12px;
+    border: 1px sold #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.write-btn {
+    padding: 8px 12px;
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.board-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.board-table tr {
+    display: flex;
+}
+
+.board-table th{
+    background-color: #f1f3f5;
+    font-size: 14px;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.board-table td {
+    font-size: 14px;
+    padding: 14px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.board-table a{
+    color: #222;
+    text-decoration: none;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 20px 24px;
+}
+
+.page-btn {
+    padding : 6px 12px;
+    border: 1px solid #ddd;
+    background: white;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.active {
+    background-color: #2d6a4f;
+    color: white;
+    border: 1px solid #2d6a4f;
+}
+
+.no-cell {
+    flex: 1;
+}
+
+.title-cell{
+    text-align: left;
+    flex: 4;
+}
+
+.author-cell {
+    flex: 1;
+}
+
+.date-cell {
+    flex: 1;
+}
+
+.views-cell {
+    flex: 1;
+}

@@ -1,0 +1,71 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     /* vh(view height) 브라우저의 높이를 따라간다. */
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #f5f7fa;
+ }
+
+ .container {
+     width: 800px;
+     height: 400px;
+     background-color: white;
+     border-radius: 15px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 50px;
+ }
+
+ .logo img {
+     width: 220px;
+     height: auto;
+ }
+
+ .login {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .row {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+ }
+
+ .input-group {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+ }
+
+ input [type="text"],
+ input [type="password"] {
+     width: 220px;
+     border: none;
+     border-bottom: 2px soild #999;
+     padding: 8px;
+     font-size: 15px;
+     outline: none;
+ }
+
+ button {
+     width: 90px;
+     height: 90px;
+     border: none;
+     background-color: cornflowerblue;
+     color: white;
+     border-radius: 10px;
+     cursor: pointer;
+ }
+
+ .save {
+    
+ }
