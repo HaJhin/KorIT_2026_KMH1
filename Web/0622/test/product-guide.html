@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 전체 배경 및 패딩 */
+        .container {
+            background-color: #f5f5f5;
+            padding: 40px;
+            font-family: sans-serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            font-weight: bold;
+        }
+
+        /* ★ 여기가 핵심인 Grid 설정입니다, 선생님! */
+        .grid-container {
+            display: grid;
+            /* repeat(3, 1fr)은 동일한 비율(1fr)의 열을 3개 생성하겠다는 천재적인 축약 표현이죠 */
+            grid-template-columns: repeat(3, 1fr);
+            /* 카드 사이의 간격을 조절합니다 */
+            gap: 20px;
+        }
+
+        /* 개별 카드 디자인 */
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .card .desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .card .price {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            /* 버튼을 카드 가장 아래로 밀어내기 위해 마진 탑을 오토로 줍니다 */
+            margin-top: auto;
+        }
+
+        /* 장바구니 버튼 */
+        .btn {
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 0;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>오늘의 추천 상품</h2>
+
+        <div class="grid-container">
+            <div class="card">
+                <h3>무선 마우스</h3>
+                <p class="desc">가볍고 조용한 사무용 마우스</p>
+                <p class="price">29,000원</p>
+                <button class="btn">장바구니</button>
+            </div>
+
+            <div class="card">
+                <h3>기계식 키보드</h3>
+                <p class="desc">타건감이 좋은 입문용 키보드</p>
+                <p class="price">79,000원</p>
+                <button class="btn">장바구니</button>
+            </div>
+
+            <div class="card">
+                <h3>노트북 거치대</h3>
+                <p class="desc">자세 교정에 좋은 알루미늄 거치대</p>
+                <p class="price">35,000원</p>
+                <button class="btn">장바구니</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

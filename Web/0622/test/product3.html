@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: "Malgun Gothic", sans-serif;
+            padding: 20px;
+        }
+
+        .template-container {
+            display: grid;
+            grid-template-columns: 180px 1fr 220px;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                "header header header"
+                "nav    main   aside"
+                "footer footer footer";
+            gap: 15px;
+            padding: 20px;
+            margin: 30px auto;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #243036;
+            color: white;
+            padding: 20px;
+        }
+
+        .nav {
+            grid-area: nav;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+        }
+
+        .nav p {
+            padding: 10px;
+            background-color: #f1f3f5;
+            border-radius: 6px;
+
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 40px;
+        }
+
+        .aside {
+            grid-area: aside;
+            background-color: #fff8e0;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+        }
+
+        .footer {
+            grid-area: footer;
+            text-align: center;
+            color: #888;
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="template-container">
+        <header class="header">
+            <h1> ABC 소프트웨어 </h1>
+            <p> 기업용 웹 시스템을 개발하는 IT 회사입니다. </p>
+        </header>
+
+        <nav class="nav">
+            <p>회사소개</p>
+            <p>서비스</p>
+            <p>채용정보</p>
+            <p>문의하기</p>
+        </nav>
+
+        <main class="main">
+            <h2> 회사 소개 </h2>
+            <p> ABC 소프트웨어는 학원,병원,쇼핑몰을 위한.... 중략 </p>
+            <h2> 주요 서비스 </h2>
+            <p> 예약 관리, 회원 관리, 결제 관리... 중략 </p>
+        </main>
+
+        <aside class="aside">
+            <h2> 고객센터 </h2>
+            <p> 전화 : 02-1234-5678 </p>
+            <p> 운영시간 : 09:00 ~ 18:00 </p>
+        </aside>
+
+        <footer class="footer"> Copyright 2026 ABC software </footer>
+    </div>
+
+</body>
+
+</html>
