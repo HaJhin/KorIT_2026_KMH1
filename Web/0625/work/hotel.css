@@ -3,6 +3,7 @@
 }
 
 body{
+    font-family: sans-serif;
     background-color: #f5f6fa;
     margin: 0 auto;
 }
@@ -17,4 +18,9 @@ body{
 
 .header__right{
     flex-direction: row;
+}
+.header__right ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
