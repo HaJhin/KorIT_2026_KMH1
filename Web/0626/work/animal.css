@@ -75,3 +75,24 @@ nav a:hover{
     font-size: 38px;
     line-height: 0;
 }
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;       /* 전체 테두리는 연한 회색 */
+  border-top: 5px solid #3498db;   /* 윗부분 테두리만 파란색으로 포인트 */
+  border-radius: 50%;              /* 완벽한 원으로 만듦 */
+  
+  /* spin 대본을 1초 동안, 같은 속도(linear)로, 무한히(infinite) 회전시킴 */
+  animation: spin 1s linear infinite;
+}
+
+/* 0도에서 360도까지 영원히 회전하는 대본 */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
