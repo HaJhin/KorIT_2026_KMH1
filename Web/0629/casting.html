@@ -59,7 +59,7 @@
         // 숫자연산
         let implicit3 = '5' - 2; // 문자열 -> 숫자
         document.write(implicit3+'<br>');
-        let implicit4 = true = 1;
+        let implicit4 = true == 1;
         document.write(implicit4+'<br>');
 
         // 비교 연산자
@@ -76,6 +76,13 @@
         document.write(strict1+'<br>');
         let strict2 = '5' === 5;
         document.write(strict2+'<br>');
+
+        let logic1 = !'hello';
+        document.write('<hr>');
+        document.write('<h2>논리형 변환</h2>');
+        document.write(logic1+'<br>');
+        let logic2 = !!'';
+        document.write(logic2+'<br>');
     </script>
 </head>
 <body>

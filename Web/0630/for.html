@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // for(초기식; 조건식; 증감식) {조건이 참일때 반복수행할 코드}
+        // for (let i = 6; i > 1; i--) {
+        //     document.write(`<h${i}>자바스크립트</h${i}>`);
+        // }
+        // for (let i = 2; i <= 9; i++) {
+        //     for (let j = 1; j <= 9; j++) {
+        //         document.write(`${i} X ${j} = ${i*j} <br>`);
+        //     }
+        //     document.write('<br>');
+        // }
+        function sayHi() {
+            let result = '';
+            for (let i = 0; i < 3; i++) {
+                result += '<li> 안녕 </li>';
+            }
+            return result;
+        }
+        document.write(`<ul> ${sayHi()} </ul>`);
+
+
+        function plusNum() {
+            let inputNum = Number(document.getElementById('inputNum').value);
+            let totalNum = 0;
+            for (let i = 1; i <= inputNum; i++) {
+                totalNum += i;
+            }
+            document.getElementById('plusNumResult').innerText = totalNum;
+        }
+    </script>
+</head>
+
+<body>
+    <hr>
+    <h3>1부터 입력한 수까지의 합</h3>
+    <input type="number" id="inputNum" placeholder="정수 입력">
+    <button onclick="plusNum()">계산</button>
+    <h2 id="plusNumResult"></h2>
+</body>
+
+</html>

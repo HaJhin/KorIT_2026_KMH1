@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function calc() {
+            // 농구공 25개가 있다.
+            // 한 박스에 4개씩 담을 수 있을 때 필요한 박스의 갯수를 body에 출력
+            let input = document.getElementById('count');
+
+            // input 태그의 값 뽑기(뽑아온 값은 문자열이기에 형변환 필수)
+            let count = Number(input.value);
+            let box = Math.ceil(count / 4);
+
+            // 연산된 값을 넣어주기 위한 태그 선택
+            let div = document.getElementById('box');
+
+            // innerHTML
+            //태그를 포함해서 문자열을 쓰면 적용이 된다.
+
+            // innerText
+            // 태그를 써도 그냥 문자열로 그대로 출력이 된다.
+
+            div.innerText = box;
+        }
+        // 영화관에서 학생(20세 미만)은 20% 할인, 성인은 정가를 낸다.
+        // 티켓 가격이 12000원이고, 나이에 따라 티켓 가격을 계산하여 출력       
+        function calcTicket() {
+            let ticketPrice = Number(document.getElementById('ticketPrice').value);
+            let customerOld = Number(document.getElementById('customerOld').value);
+            if (customerOld < 20) {
+                ticketPrice = ticketPrice * 0.8;
+            }
+            let totalPrice = document.getElementById('result');
+            totalPrice.innerText = ticketPrice;
+        }
+        // 배송 금액이 3만원 이상이거나 vip면 무료 배송
+        function calcDlvy() {
+            let orderPrice = Number(document.getElementById('orderPrice').value);
+            let isVIP = document.querySelector("input[name='vip']:checked").value === 'true';
+            let isFree = (orderPrice >= 30000 || isVIP);
+            document.getElementById("orderResult").innerText = isFree;
+        }
+    </script>
+</head>
+
+<body>
+    <label>
+        공의 개수
+        <input type="text" id="count">
+    </label>
+    <button onclick="calc()">계산하기</button> <br>
+    <label>
+        <label for="box">필요한 박스의 개수 : </label>
+        <span id="box"></span>
+    </label>
+    <hr>
+    <h1>티켓 가격 계산기</h1>
+    티켓 가격 : <input id="ticketPrice" placeholder="티켓 가격 입력">
+    고객 연령 : <input id="customerOld" placeholder="나이 입력">
+    <button onclick="calcTicket()"> 계산하기 </button>
+    <br>
+    <label for="result"> 최종 티켓 가격 : </label>
+    <span id="result"> </span>
+    <hr>
+    <h1>배송비 계산기</h1>
+    <label>
+        <br>
+        총 주문 금액 : <input type="number" id="orderPrice" placeholder="주문금액 입력">
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="vip" value="true"> VIP
+    </label>
+    <label>
+        <input type="radio" name="vip" value="false"> 일반회원
+    </label>
+    <br>
+    <button onclick="calcDlvy()">배송비 계산</button>
+    <br>
+    총 배송 비용 : <span id="orderResult"> </span>
+</body>
+
+</html>

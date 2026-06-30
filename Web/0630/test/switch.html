@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const day = 3;
+
+        switch (day) {
+            case 1:
+                document.write('월요일');
+                break;
+            case 2:
+                document.write('화요일');
+                break;
+            case 3:
+                document.write('수요일');
+                break;
+            default:
+                document.write('1~3이 아니다.');
+        }
+
+        function showPrice() {
+            let fruit = String(document.getElementById("fruit").value);
+            let price = 0;
+            switch (fruit) {
+                case "apple":
+                    price = 3000;
+                    break;
+                case "banana":
+                    price = 2000;
+                    break;
+                case "grape":
+                    price = 5000;
+                    break;
+                case "orange":
+                    price = 4000;
+                    break;
+            } // switch ed
+            // 화면에 가격 띄우기
+            document.getElementById("result").innerHTML = price;
+        } // func ed
+
+        function classRoom() {
+            let grade = Number(document.getElementById("grade").value);
+            let message;
+            switch (grade) {
+                case 1:
+                    message = "1학년 <br> 강의실 : A동 101호 <br> HTML/CSS 기초수업입니다."
+                    break;
+                case 2:
+                    message = "2학년 <br> 강의실 : B동 202호 <br> 중급 JavaScript 수업입니다."
+                    break;
+                case 3:
+                    message = "3학년 <br> 강의실 : C동 303호 <br> 프로젝트 실습 수업입니다."
+                    break;
+                case 4:
+                    message = "4학년 <br> 강의실 : D동 404호 <br> 포트폴리오 제작 수업입니다."
+                    break;
+            } // switch ed
+            // 화면에 가격 띄우기
+            document.getElementById("resultRoom").innerHTML = message;
+        } // func ed
+
+        function checkAuthor() {
+            let author = String(document.querySelector("input[name='author']:checked").value);
+            let message;
+            switch (author) {
+                case "admin":
+                    message = "관리자 권한"
+                    break;
+                case "user":
+                    message = "회원 권한"
+                    break;
+                case "guest":
+                    message = "손님 권한"
+                    break;
+            } // switch ed
+            // 화면에 가격 띄우기
+            document.getElementById("authorResult").innerHTML = message;
+        }
+
+        function cal(op) {
+            let firstNum = Number(document.getElementById('firstNum').value);
+            let secondNum = Number(document.getElementById('secondNum').value);
+            let resultNum = 0;
+            switch(op) {
+                case '+': 
+                    resultNum = firstNum + secondNum
+                    break;
+                case '-': 
+                    resultNum = firstNum - secondNum
+                    break;
+                case '*': 
+                    resultNum = firstNum * secondNum
+                    break;
+                case '/': 
+                    resultNum = firstNum / secondNum
+                    break;
+            }
+            document.getElementById("resultNum").innerHTML = resultNum;
+        }
+    </script>
+</head>
+
+<body>
+    <hr>
+    <select id="fruit">
+        <option value="apple">사과</option>
+        <option value="banana">바나나</option>
+        <option value="grape">포도</option>
+        <option value="orange">오렌지</option>
+    </select>
+    <button onclick="showPrice()">가격 확인</button>
+    <h3 id="result"></h3>
+    <hr>
+    <h3>학년별 강의실 안내</h3>
+    학년 입력 : <select id="grade">
+        <option value="1">1학년</option>
+        <option value="2">2학년</option>
+        <option value="3">3학년</option>
+        <option value="4">4학년</option>
+    </select>
+    <button onclick="classRoom()">강의실 찾기</button>
+    <h3 id="resultRoom"></h3>
+    <hr>
+    <h3>라디오 버튼으로 회원 권한 확인</h3>
+    <!-- 사용자가 회원 권한을 선택하면 해당 권한으로 이용가능한 기능 출력 -->
+    <!-- 관리자,회원,손님 라디오 버튼 만들기 -->
+    <!-- 권한 확인 버튼 만들기 -->
+    <!-- 결과 출력 -->
+    <label>
+        관리자 <input type="radio" name="author" value="admin"> 
+    </label>
+    <label>
+        회원 <input type="radio" name="author" value="user"> 
+    </label>
+    <label>
+        손님 <input type="radio" name="author" value="guest"> 
+    </label>
+    <button onclick="checkAuthor()">권한 확인</button>
+    <h3 id="authorResult"></h3>
+    <hr>
+    <h3>연산자 버튼 계산기</h3>
+    <table border="1">
+        <tr>
+            <td><strong>수1</strong></td>
+            <td><input style="border: none;" type="number" id="firstNum" placeholder="첫번째 수 입력"></td>
+        </tr>
+        <tr>
+            <td><strong>수2</strong></td>
+            <td><input style="border: none;" type="number" id="secondNum" placeholder="두번째 수 입력"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center; padding: 10px;">
+                <button style="margin: 10px;" onclick="cal(`+`)">+</button>
+                <button style="margin: 10px;" onclick="cal(`-`)">-</button>
+                <button style="margin: 10px;" onclick="cal(`*`)">*</button>
+                <button style="margin: 10px;" onclick="cal(`/`)">/</button>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>결과</strong></td>
+            <td><span id="resultNum"></span></td>
+        </tr>
+    </table>
+</body>
+
+</html>
