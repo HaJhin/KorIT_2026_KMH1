@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>학생 정보 입력</h1>
+    학생 이름 : <input id="stName" placeholder="이름 입력">
+    학생 과목 : <input id="stClass" placeholder="과목 입력">
+    학생 점수 : <input id="stScore" placeholder="점수 입력">
+    <br><br> <button onclick="stRegist()">학생 등록</button>
+    <h1> 학생 정보 </h1>
+    <ul id="stInfo"></ul>
+
+    <script>
+        let studentList = [];
+        let student = {};
+
+        function printSt() {
+            let html = "";
+            for (let i = 0; i < studentList.length; i++) {
+                html += `<li>학생명 : ${studentList[i].name} / 과목 : ${studentList[i].class} / 점수 : ${studentList[i].score}`;
+                if (studentList[i].score < 60) {
+                    html += ` / <strong>불합격</strong></li>`;
+                } else {
+                    html += ` / <strong>합격</strong></li>`;
+                } // if ed
+            } // for ed
+            document.getElementById("stInfo").innerHTML = html;
+        }
+        printSt();
+
+        function stRegist() {
+            let stNameI = document.getElementById("stName");
+            let stClassI = document.getElementById("stClass");
+            let stScoreI = document.getElementById("stScore");
+            let stName = stNameI.value;
+            let stClass = stClassI.value;
+            let stScore = stScoreI.value;
+
+            if (stName === '' || stClass === '' || stScore === '') {
+                alert("모든 값을 입력하세요");
+                return;
+            } else {
+                let newSt = { name: stName, class: stClass, score: stScore };
+                studentList.push(newSt);
+            }
+            printSt();
+            stNameI.value = ''; stClassI.value = ''; stScoreI.value = '';
+        }
+
+
+    </script>
+</body>
+
+</html>

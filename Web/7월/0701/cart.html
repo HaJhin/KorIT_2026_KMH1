@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>쇼핑몰 장바구니 관리 기능 만들기</h1>
+    <!-- 배열과 객체를 사용하여 실제 쇼핑몰에서 사용하는 장바구니 기능을 만들기 -->
+    <!-- 상품 목록 영역 -->
+    <h2>상품 목록 영역 </h2>
+    <ul id="productList"></ul>
+    <!-- 장바구니 영역 -->
+    <h2> 장바구니 </h2>
+    <ul id="cart"></ul>
+    <!-- 총 금액 영역(장바구니 전체 금액 출력) -->
+    <h2 id="totalPrice">총 금액 : 0원</h2>
+
+    <script>
+        let products = [
+            { name: "키보드", price: 30000 },
+            { name: "마우스", price: 15000 },
+            { name: "모니터", price: 200000 }
+        ];
+
+        let cart = [];
+
+        function printProduct() {
+            let list = "";
+            for (let i = 0; i < products.length; i++) {
+                list += `<li>상품명 : ${products[i].name} / 가격 : ${products[i].price}원`;
+                list += " <button onclick='addCart(" + i + ")'>장바구니에 담기</button> </li>";
+            }
+            document.getElementById("productList").innerHTML = list;
+        }
+        printProduct();
+        printCart();
+
+        function addCart(index) {
+            let choosenProduct = products[index];
+            if (cart.find(item => item.name === choosenProduct.name)) {
+                cart[index].quantity++;
+            } else {
+                cart.push({ name: products[index].name, price: products[index].price, quantity: 1 });
+            }
+            printCart();
+            totalPrice();
+        }
+        function removeCart(i) {
+            cart.splice(i,1);
+            printCart();
+            totalPrice();
+        }
+
+        function printCart() {
+            if (cart.length === 0) {
+                document.getElementById("cart").innerHTML = "장바구니가 비어있습니다.";
+            } else {
+                let list = "";
+                for (let i = 0; i < cart.length; i++) {
+                    list += `<li>상품명 : ${cart[i].name} / 가격 : ${cart[i].price}원 / 개수 : ${cart[i].quantity}개`;
+                    list += " <button onclick='removeCart(" + i + ")'>삭제</button> </li>";
+                }
+                document.getElementById("cart").innerHTML = list;
+            }
+        }
+
+        function totalPrice() {
+            let totalP = 0;
+            for (let i = 0; i < cart.length; i++) {
+                totalP += cart[i].price * cart[i].quantity;
+            }
+            let totalPrice = `총 금액 : ${totalP}원`;
+            document.getElementById("totalPrice").innerHTML = totalPrice;
+        }
+    </script>
+</body>
+
+</html>
