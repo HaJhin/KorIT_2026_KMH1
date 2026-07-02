@@ -1,168 +1,148 @@
-4-1. 전체 레이아웃
-항목   조건
-전체 배경색   #eef2f3
-전체 레이아웃   왼쪽 사이드바 + 오른쪽 콘텐츠
-콘텐츠 최소 높이   100vh
-사이드바 너비   240px
-오른쪽 콘텐츠 여백   30px
-4-2. 사이드바 영역
+HTML 요구사항
+| 요소          | 조건                  |
+| ----------- | ------------------- |
+| 전체 감싸는 영역   | `class="container"` |
+| 제목          | `회원가입`              |
+| 아이디 입력창     | `id="userId"`       |
+| 중복검사 버튼     | `id="checkBtn"`     |
+| 비밀번호 입력창    | `id="userPw"`       |
+| 이메일 아이디 입력창 | `id="emailId"`      |
+| 이메일 도메인 선택  | `id="emailDomain"`  |
+| 회원가입 버튼     | `id="joinBtn"`      |
+| 결과 메시지 영역   | `id="message"`      |
+| 회원 목록 영역    | `id="memberList"`   |
+이메일 조건
 
-aside 태그를 사용한다.
+이메일은 직접 전체를 입력하는 것이 아니라 다음 형태로 작성한다.
 
-포함 내용
+이메일 아이디 @ 도메인 선택
 
-로고:
+예시:
 
-Happy Paws
+hong @ gmail.com
 
-메뉴 5개:
+저장될 이메일:
 
-대시보드
-입양 관리
-보호 동물
-봉사 일정
-후원 현황
-스타일 조건
-항목   값
-너비   240px
-배경색   #263238
-글자색   white
-안쪽 여백   30px 20px
-로고 색상   #ffcc80
-로고 크기   26px
-메뉴 hover 효과
+hong@gmail.com
+도메인 select 항목
 
-메뉴에 마우스를 올리면 다음 효과를 적용한다.
+다음 항목을 포함하시오.
 
-background-color: #37474f;
-transform: translateX(8px);
-transition: 0.3s;
-4-3. 상단 헤더 영역
+<option value="gmail.com">gmail.com</option>
+<option value="naver.com">naver.com</option>
+<option value="daum.net">daum.net</option>
+<option value="kakao.com">kakao.com</option>
 
-header 태그를 사용한다.
+CSS 스타일 조건
+전체 화면
+선택자   속성   값
+body   margin   0
+body   font-family   Arial, sans-serif
+body   background-color   #f3f4f6
+container
+선택자   속성   값
+.container   width   420px
+.container   margin   50px auto
+.container   background-color   white
+.container   padding   30px
+.container   border-radius   12px
+.container   box-shadow   0 4px 12px rgba(0,0,0,0.15)
+제목
+선택자   속성   값
+h1   text-align   center
+h1   color   #111827
+아이디 입력 영역
 
-포함 내용
+아이디 입력창과 중복검사 버튼은 가로로 배치한다.
 
-제목:
+선택자   속성   값
+.id-box   display   flex
+.id-box   gap   10px
+.id-box input   flex   1
+#checkBtn   width   90px
+이메일 입력 영역
 
-입양 현황 대시보드
+이메일 아이디 입력창, @, 도메인 선택창은 가로로 배치한다.
 
-설명:
+선택자   속성   값
+.email-box   display   flex
+.email-box   align-items   center
+.email-box   gap   8px
+.email-box input   flex   1
+.email-box select   width   140px
+입력창과 select
+선택자   속성   값
+input, select   padding   10px
+input, select   border   1px solid #ccc
+input, select   border-radius   6px
+버튼
+선택자   속성   값
+button   padding   10px
+button   border   none
+button   border-radius   6px
+button   cursor   pointer
+중복검사 버튼
+선택자   속성   값
+#checkBtn   background-color   #6b7280
+#checkBtn   color   white
+회원가입 버튼
+선택자   속성   값
+#joinBtn   width   100%
+#joinBtn   background-color   royalblue
+#joinBtn   color   white
+#joinBtn   margin-top   15px
+회원 목록
+선택자   속성   값
+.member-item   background-color   #f9fafb
+.member-item   border   1px solid #ddd
+.member-item   padding   10px
+.member-item   margin-top   8px
+.member-item   border-radius   6px
 
-오늘의 보호소 운영 현황을 한눈에 확인합니다.
-스타일 조건
-항목   값
-배경색   white
-둥글기   18px
-안쪽 여백   24px 30px
-아래 여백   30px
-그림자   0 8px 20px rgba(0,0,0,0.06)
-애니메이션 조건
+JavaScript 요구사항
+1) 회원 저장 배열
 
-제목에는 @keyframes를 사용하여 아래에서 위로 나타나는 효과를 적용한다.
+회원 정보를 저장할 배열을 만든다.
 
-시작: opacity: 0; transform: translateY(30px);
-끝: opacity: 1; transform: translateY(0);
-시간: 0.9s;
-4-4. 요약 카드 영역
+let members = [];
 
-section 태그 안에 article 태그 4개를 작성한다.
+회원 한 명은 다음과 같은 객체 형태로 저장한다.
 
-카드 내용
-제목   숫자
-보호중   28
-입양 완료   12
-치료중   5
-봉사 신청   18
-스타일 조건
-항목   값
-배치   Grid 4열
-간격   24px
-카드 배경색   white
-카드 둥글기   18px
-카드 안쪽 여백   24px
-그림자   0 8px 20px rgba(0,0,0,0.08)
-숫자 색상   #ef6c00
-숫자 크기   38px
-카드 hover 효과
-transform: translateY(-10px);
-box-shadow: 0 16px 28px rgba(0,0,0,0.15);
-transition: 0.3s;
-카드 애니메이션
+{
+    id: "user01",
+    pw: "1234",
+    email: "user01@gmail.com"
+}
+2) 아이디 중복검사 기능
 
-카드는 @keyframes를 사용하여 작게 시작했다가 커지며 나타나게 한다.
+중복검사 버튼을 클릭하면 다음 조건에 따라 처리한다.
 
-시작: opacity: 0; transform: scale(0.9);
-끝: opacity: 1; transform: scale(1);
-4-5. 보호 동물 상태표
+조건   처리
+아이디를 입력하지 않은 경우   아이디를 입력하세요. alert 출력
+이미 같은 아이디가 있는 경우   이미 사용 중인 아이디입니다. 메시지 출력
+중복이 없는 경우   사용 가능한 아이디입니다. 메시지 출력
+3) 회원가입 기능
 
-section 태그 안에 table 태그를 사용한다.
+회원가입 버튼을 클릭하면 다음 조건에 따라 처리한다.
 
-표 제목
-보호 동물 상태표
-표 내용
-이름   종류   상태   담당자
-초코   강아지   입양 대기   김보호
-나비   고양이   치료중   이관리
-두부   강아지   상담 예약   박입양
-콩이   고양이   입양 완료   최상담
-스타일 조건
-항목   값
-section 배경색   white
-둥글기   18px
-안쪽 여백   28px
-아래 여백   30px
-표 너비   100%
-행 높이   54px
-th 배경색   #eceff1
-셀 테두리   1px solid #ddd
-셀 정렬   가운데 정렬
-행 hover 효과
-background-color: #fff3e0;
-transition: 0.3s;
-4-6. 하단 정보 영역
+조건   처리
+아이디, 비밀번호, 이메일 아이디 중 하나라도 비어 있음   모든 항목을 입력하세요. alert 출력
+이미 가입된 아이디   이미 가입된 아이디입니다. alert 출력
+모든 조건 통과   회원 객체를 배열에 저장
+4) 회원가입 완료 후 처리
 
-section 태그를 사용하여 박스 2개를 좌우로 배치한다.
+회원가입이 완료되면 다음 작업을 수행한다.
 
-왼쪽 박스: 긴급 구조 알림
+회원가입이 완료되었습니다. 메시지 출력
+아이디 입력창 비우기
+비밀번호 입력창 비우기
+이메일 아이디 입력창 비우기
+회원 목록 다시 출력하기
+5) 회원 목록 출력 조건
 
-내용:
+회원 목록에는 다음 정보만 출력한다.
 
-오늘 구조 요청 3건
-치료가 필요한 동물 2마리 확인
-임시 보호처 1곳 필요
-오른쪽 박스: 봉사 일정
+아이디
+이메일
 
-내용:
-
-오전 10:00 산책 봉사
-오후 02:00 보호소 청소
-오후 05:00 사료 정리
-스타일 조건
-항목   값
-배치   Grid 2열
-간격   24px
-박스 배경색   white
-둥글기   18px
-안쪽 여백   28px
-그림자   0 8px 20px rgba(0,0,0,0.06)
-박스 hover 효과
-transform: scale(1.03);
-transition: 0.3s;
-긴급 구조 알림 애니메이션
-
-긴급 구조 알림 박스에는 @keyframes를 사용하여 좌우로 살짝 흔들리는 효과를 적용한다.
-
-4-7. Footer
-
-footer 태그를 사용한다.
-
-내용
-© 2026 Happy Paws Animal Shelter Dashboard
-스타일 조건
-항목   값
-배경색   white
-둥글기   18px
-안쪽 여백   20px
-글자색   #607d8b
-정렬   가운데
+비밀번호는 출력하지 않는다.

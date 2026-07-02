@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+    <script src="signup.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Title -->
+        <h1>회원가입</h1>
+
+        <h3>아이디</h3>
+        <div class="id-box">
+            <input id="idInput" placeholder="아이디 입력">
+            <button id="checkBtn">중복 검사</button>
+        </div>
+
+        <h3> 비밀번호 </h3>
+        <div class="pw-box">
+            <input id="pwInput" type="password" placeholder="비밀번호 입력">
+        </div>
+
+        <h3>이메일</h3>
+        <div class="email-box">
+            <input id="emailInput" placeholder="이메일 아이디"> @
+            <select>
+                <option value="gmail.com">gmail.com</option>
+                <option value="naver.com">naver.com</option>
+                <option value="daum.net">daum.net</option>
+                <option value="kakao.com">kakao.com</option>
+            </select>
+        </div>
+
+        <!-- 회원가입 버튼 -->
+        <button id="joinBtn" onclick="regist()">회원가입</button>
+
+        <!--  -->
+        <div id="notice"></div>
+
+        <div class="user-list">
+            <h2>회원 목록</h2>
+            <div id="userList"></div>
+        </div>
+    </div>
+</body>
+
+</html>

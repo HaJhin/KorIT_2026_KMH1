@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">DOM 스타일 변경</h1>
+    <button onclick="change()">스타일 변경</button>
+
+    <script>
+        function change() {
+            let title = document.getElementById("title");
+            title.style.color = "white";
+            title.style.backgroundColor = "royalblue";
+            title.style.fontSize = "40px";
+            title.style.textAlign = "center";
+        }
+    </script>
+</body>
+</html>
