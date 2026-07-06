@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="shop.css">
+    <script src="shop.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Shop Dashboard</h1>
+        <span id="cart">장바구니 : 0개</span>
+    </header>
+
+    <main>
+        <section id="search-section">
+            <input id="search-box" placeholder="상품명 검색">
+            <select id="search-option">
+                <option value="전체">전체 카테고리</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </section>
+        <section id="list-section">
+            <div id="card-list">
+                <article id="card">
+                    <img src="#" id="card-image" alt="상품사진1">
+                    <div class="product-info">
+                        <h3 id="title">dummy1</h3>
+                        <p id="brand">dummy brand</p>
+                        <p id="price">$5.99</p>
+                        <p id="discountPercentage">할인율 : 10.9%</p>
+                        <p id="rating">2.65</p>
+                    </div>
+                    <button id="push-cart">장바구니 담기</button>
+                </article>
+                <article id="card">
+                    <img src="#" id="card-image" alt="상품사진2">
+                    <h3 id="title">dummy2</h3>
+                    <p id="brand">dummy brand</p>
+                    <span class="badge">고가 상품</span>
+                    <p id="price">$100.99</p>
+                    <p id="discountPercentage">할인율 : 10.9%</p>
+                    <p id="rating">2.65</p>
+                    <button id="push-cart">장바구니 담기</button>
+                </article>
+                <article id="card">
+                    <img src="#" id="card-image" alt="상품사진3">
+                    <h3 id="title">dummy3</h3>
+                    <p id="brand">dummy brand</p>
+                    <p id="price">$5.99</p>
+                    <p id="discountPercentage">할인율 : 10.9%</p>
+                    <p id="rating">2.65</p>
+                    <button id="push-cart">장바구니 담기</button>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

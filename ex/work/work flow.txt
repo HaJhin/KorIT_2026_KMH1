@@ -1,148 +1,100 @@
-HTML 요구사항
-| 요소          | 조건                  |
-| ----------- | ------------------- |
-| 전체 감싸는 영역   | `class="container"` |
-| 제목          | `회원가입`              |
-| 아이디 입력창     | `id="userId"`       |
-| 중복검사 버튼     | `id="checkBtn"`     |
-| 비밀번호 입력창    | `id="userPw"`       |
-| 이메일 아이디 입력창 | `id="emailId"`      |
-| 이메일 도메인 선택  | `id="emailDomain"`  |
-| 회원가입 버튼     | `id="joinBtn"`      |
-| 결과 메시지 영역   | `id="message"`      |
-| 회원 목록 영역    | `id="memberList"`   |
-이메일 조건
+회원가입 입력값 정규표현식 검사 실습문제
 
-이메일은 직접 전체를 입력하는 것이 아니라 다음 형태로 작성한다.
+HTML, CSS, JavaScript를 사용하여 회원가입 입력 검사 화면을 만드시오.
 
-이메일 아이디 @ 도메인 선택
-
-예시:
-
-hong @ gmail.com
-
-저장될 이메일:
-
-hong@gmail.com
-도메인 select 항목
-
-다음 항목을 포함하시오.
-
-<option value="gmail.com">gmail.com</option>
-<option value="naver.com">naver.com</option>
-<option value="daum.net">daum.net</option>
-<option value="kakao.com">kakao.com</option>
-
-CSS 스타일 조건
-전체 화면
-선택자   속성   값
-body   margin   0
-body   font-family   Arial, sans-serif
-body   background-color   #f3f4f6
-container
-선택자   속성   값
-.container   width   420px
-.container   margin   50px auto
-.container   background-color   white
-.container   padding   30px
-.container   border-radius   12px
-.container   box-shadow   0 4px 12px rgba(0,0,0,0.15)
-제목
-선택자   속성   값
-h1   text-align   center
-h1   color   #111827
-아이디 입력 영역
-
-아이디 입력창과 중복검사 버튼은 가로로 배치한다.
-
-선택자   속성   값
-.id-box   display   flex
-.id-box   gap   10px
-.id-box input   flex   1
-#checkBtn   width   90px
-이메일 입력 영역
-
-이메일 아이디 입력창, @, 도메인 선택창은 가로로 배치한다.
-
-선택자   속성   값
-.email-box   display   flex
-.email-box   align-items   center
-.email-box   gap   8px
-.email-box input   flex   1
-.email-box select   width   140px
-입력창과 select
-선택자   속성   값
-input, select   padding   10px
-input, select   border   1px solid #ccc
-input, select   border-radius   6px
-버튼
-선택자   속성   값
-button   padding   10px
-button   border   none
-button   border-radius   6px
-button   cursor   pointer
-중복검사 버튼
-선택자   속성   값
-#checkBtn   background-color   #6b7280
-#checkBtn   color   white
-회원가입 버튼
-선택자   속성   값
-#joinBtn   width   100%
-#joinBtn   background-color   royalblue
-#joinBtn   color   white
-#joinBtn   margin-top   15px
-회원 목록
-선택자   속성   값
-.member-item   background-color   #f9fafb
-.member-item   border   1px solid #ddd
-.member-item   padding   10px
-.member-item   margin-top   8px
-.member-item   border-radius   6px
-
-JavaScript 요구사항
-1) 회원 저장 배열
-
-회원 정보를 저장할 배열을 만든다.
-
-let members = [];
-
-회원 한 명은 다음과 같은 객체 형태로 저장한다.
-
-{
-    id: "user01",
-    pw: "1234",
-    email: "user01@gmail.com"
-}
-2) 아이디 중복검사 기능
-
-중복검사 버튼을 클릭하면 다음 조건에 따라 처리한다.
-
-조건   처리
-아이디를 입력하지 않은 경우   아이디를 입력하세요. alert 출력
-이미 같은 아이디가 있는 경우   이미 사용 중인 아이디입니다. 메시지 출력
-중복이 없는 경우   사용 가능한 아이디입니다. 메시지 출력
-3) 회원가입 기능
-
-회원가입 버튼을 클릭하면 다음 조건에 따라 처리한다.
-
-조건   처리
-아이디, 비밀번호, 이메일 아이디 중 하나라도 비어 있음   모든 항목을 입력하세요. alert 출력
-이미 가입된 아이디   이미 가입된 아이디입니다. alert 출력
-모든 조건 통과   회원 객체를 배열에 저장
-4) 회원가입 완료 후 처리
-
-회원가입이 완료되면 다음 작업을 수행한다.
-
-회원가입이 완료되었습니다. 메시지 출력
-아이디 입력창 비우기
-비밀번호 입력창 비우기
-이메일 아이디 입력창 비우기
-회원 목록 다시 출력하기
-5) 회원 목록 출력 조건
-
-회원 목록에는 다음 정보만 출력한다.
+사용자는 다음 정보를 입력할 수 있어야 한다.
 
 아이디
+비밀번호
 이메일
+이름
 
-비밀번호는 출력하지 않는다.
+각 입력칸은 사용자가 입력할 때마다 JavaScript 정규표현식으로 검사해야 하며, 입력칸 아래에 검사 결과 문장이 바로 출력되어야 한다.
+
+기능 조건
+1. 아이디 검사
+
+조건:
+
+영문 소문자와 숫자만 사용 가능
+5자 이상 12자 이하
+
+정규식 예시:
+
+/^[a-z0-9]{5,12}$/
+
+성공 메시지:
+
+사용 가능한 아이디입니다.
+
+실패 메시지:
+
+아이디는 영문 소문자와 숫자만 사용하여 5~12자로 입력하세요.
+2. 비밀번호 검사
+
+조건:
+
+영문 포함
+숫자 포함
+특수문자 포함
+8자 이상 16자 이하
+
+허용 특수문자:
+
+! @ # $ % ^ & *
+
+정규식 예시:
+
+/^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,16}$/
+
+성공 메시지:
+
+사용 가능한 비밀번호입니다.
+
+실패 메시지:
+
+비밀번호는 영문, 숫자, 특수문자를 포함하여 8~16자로 입력하세요.
+3. 이메일 검사
+
+조건:
+
+이메일 형식으로 입력
+예: test@gmail.com
+
+정규식 예시:
+
+/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
+
+성공 메시지:
+
+올바른 이메일 형식입니다.
+
+실패 메시지:
+
+이메일 형식이 올바르지 않습니다.
+4. 이름 검사
+
+조건:
+
+한글만 입력 가능
+2자 이상 5자 이하
+
+정규식 예시:
+
+/^[가-힣]{2,5}$/
+
+성공 메시지:
+
+올바른 이름입니다.
+
+실패 메시지:
+
+이름은 한글 2~5자로 입력하세요.
+스타일 조건
+전체 화면은 가운데 정렬한다.
+회원가입 박스는 흰색 배경으로 만든다.
+입력칸은 세로로 배치한다.
+검사 성공 메시지는 초록색으로 표시한다.
+검사 실패 메시지는 빨간색으로 표시한다.
+입력칸에는 padding과 border-radius를 적용한다.
+버튼에는 hover 효과를 적용한다.

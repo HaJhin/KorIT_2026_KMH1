@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eee;
+}
+a{
+    list-style: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+header h1{
+    color: white;
+    margin: 25px;
+    text-align: center;
+}
+header #cart{
+    background-color: royalblue;
+    margin:25px;
+    padding:8px 13px;
+    color: white;
+    font-weight: bold;
+    border-radius: 16px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#search-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%; 
+    border-radius: 12px;
+    background-color: white;
+    margin: 30px; padding: 20px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.08);
+}
+#search-box{
+    flex: 1;
+    padding: 15px;
+    margin-right: 20px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    font-size: 16px;
+}
+#search-option{
+    width: 200px;
+    padding: 15px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+/* list-section */
+#list-section{
+    border: 1px solid black;
+    width: 70%;
+}
+#card-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+#card{
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+}
+#card:hover{
+    transform: translateY(-10px);
+}

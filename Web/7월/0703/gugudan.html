@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    단 : <input id="number">
+    <button id="cal">계산 시작</button>
+    <button id="show">보이기</button>
+    <hr>
+    <div id="showBox"></div>
+
+    <script>
+        const numI = document.getElementById("number");
+        const showBox = document.getElementById("showBox");
+        const cal = document.getElementById("cal");
+        const show = document.getElementById("show");
+
+        let result = '';
+
+        const gugudan = (num) => {
+            let newResult = '';
+            for (let i = 1; i < 10; i++) {
+                newResult += `${num} X ${i} = ${num * i} <br>`
+            }
+            return newResult;
+        }
+
+        const showResult = () => {
+            showBox.innerHTML = result;
+        }   
+
+        cal.addEventListener("click", () => {
+            const num = Number(numI.value); 
+            result = gugudan(num);
+            alert(`${num}단 계산 완료`);
+        })
+
+        show.addEventListener("click", () => {showResult()})
+    </script>
+</body>
+</html>
