@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="githubSearch.css">
+    <script src="githubSearch.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GitHub 사용자 프로필 검색</h1>
+
+        <div class="input-wrap">
+            <input id="githubId" placeholder="3자 이상, 20자 이하 입력">
+            <button id="searchBtn">검색</button>
+        </div>
+        <p id="message"></p>
+
+        <div class="profileBox">
+            <img id="profile" src="" alt="프로필이미지1">
+            <div class="textarea">
+                <h2 id="resultId">Sample ID</h2>
+                <p id="resultName"><strong>이름 : </strong> sample name</p>
+                <p id="resultIntro"><strong>소개 : </strong>sample Intro</p>
+                <div class="badge-list">
+                    <span id="follow" class="badge">팔로워 : 0</span>
+                    <span id="following" class="badge">팔로잉 : 0</span>
+                    <span id="repository" class="badge">저장소 : 0</span>
+                </div>
+                <a id="GitHubLink" href="#">GitHub 페이지 이동</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
