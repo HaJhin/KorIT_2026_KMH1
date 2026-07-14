@@ -55,4 +55,5 @@ public class TestController {
 		return "Search query : " + query + " / Page : " + page;
 	}
 			
+	
 }

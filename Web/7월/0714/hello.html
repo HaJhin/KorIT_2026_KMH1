@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="이름을 입력하세요.">
+    <button id="helloBtn">인사하기</button>
+    <p id="result"></p>
+
+    <script>
+        const name = document.querySelector("input[type=text]")
+        const helloBtn = document.getElementById("helloBtn");
+        
+        helloBtn.addEventListener("click", async () => {
+            try {
+                 const res = await fetch(`http://localhost:10000/api/hello?name=${name.value}`);
+                 if (!res.ok) {
+                    throw new Error("오류");
+                 }
+                 const data = await res.text();
+
+                 document.getElementById("result").textContent = data;
+            } catch {
+                console.error("에러")
+            }
+        });
+        
+    </script>
+</body>
+</html>
