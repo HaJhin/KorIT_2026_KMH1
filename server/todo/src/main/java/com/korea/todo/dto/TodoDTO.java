@@ -14,7 +14,7 @@ import com.korea.todo.entity.TodoEntity;
 // Entity에는 서비스 로직과 관련이 없기 때문에 다른 내용을 담기 애매하다.
 // 이런 경우 DTO에 에러 메시지 필드를 선언하고 DTO에 메시지를 넣어서 전달하면 된다.
 public class TodoDTO {
-	private String id;
+	private long id;
 	private String title;
 	private boolean done;
 	
@@ -25,4 +25,5 @@ public class TodoDTO {
 		this.title = entity.getTitle();
 		this.done = entity.isDone();
 	}
+	
 }

@@ -21,13 +21,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 	implementation 'com.google.guava:guava:31.1-jre' // guava
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:4.1.0' // JPA
+	implementation 'com.mysql:mysql-connector-j:9.4.0' // mySQL connect
 	
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
-	runtimeOnly 'com.h2database:h2:2.3.232' // h2
+	runtimeOnly 'com.mysql:mysql-connector-j'
 	testCompileOnly 'org.projectlombok:lombok'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testAnnotationProcessor 'org.projectlombok:lombok'

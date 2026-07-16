@@ -18,6 +18,7 @@ import com.korea.todo.entity.TodoEntity;
 // 이 인터페이스는 CRUD 기능과 페이징, 정렬같은 기능을 기본적으로 제공한다.
 // T : 엔티티 클래스(데이터베이스 테이블과 매핑되는 클래스)를 의미한다.
 // ID : 엔티티 클래스의 기본 키 타입을 의미한다.
+
 @Repository
 public interface TodoRepository extends JpaRepository<TodoEntity, Long> {
 	
