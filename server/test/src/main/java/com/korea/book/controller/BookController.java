@@ -102,7 +102,7 @@ public class BookController {
 	}
 	
 	// 카테고리를 통한 조회
-	@GetMapping("/search")
+	@GetMapping("/search/category")
 	public ResponseEntity<?> findByCategory(@RequestParam("category") String category) {
 		try {
 			List<BookDTO> result = bookService.findByCategory(category);
