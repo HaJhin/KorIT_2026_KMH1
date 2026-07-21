@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -51,7 +52,7 @@ public class TodoController {
 
 	// 요청 -> (DTO -> Entity) TodoController -> TodoService
 	@PostMapping
-	public ResponseEntity<?> createTodo(@RequestBody TodoDTO dto) {
+	public ResponseEntity<?> createTodo(@AuthenticationPrincipal String userId, @RequestBody TodoDTO dto) {
 		try {
 			// 추가하기 위해 데이터가 넘어온다
 			// 매개변수로 받아 엔티티로 변경하고 서비스로 보낸다.
@@ -73,7 +74,7 @@ public class TodoController {
 	} // createTodo ed
 
 	@GetMapping("/findAll")
-	public ResponseEntity<?> findAll() {
+	public ResponseEntity<?> findAll(@AuthenticationPrincipal String userId) {
 		try {
 			String temporaryUserId = "temporary-User"; // 임시 유저
 			List<TodoEntity> result = todoService.findAll(temporaryUserId);
@@ -87,7 +88,7 @@ public class TodoController {
 	} // findAll ed
 
 	@PutMapping("/update")
-	public ResponseEntity<?> updateTodo(@RequestBody TodoDTO dto) {
+	public ResponseEntity<?> updateTodo(@AuthenticationPrincipal String userId, @RequestBody TodoDTO dto) {
 		try {
 			String temporaryUserId = "temporary-User"; // 임시 유저
 			TodoEntity entity = TodoDTO.toEntity(dto);
@@ -106,7 +107,7 @@ public class TodoController {
 	}
 	
 	@DeleteMapping("/delete")
-	public ResponseEntity<?> deleteTodo(@RequestBody TodoDTO dto) {
+	public ResponseEntity<?> deleteTodo(@AuthenticationPrincipal String userId, @RequestBody TodoDTO dto) {
 		try {
 			String temporaryUserId = "temporary-User"; // 임시 유저
 			TodoEntity entity = TodoDTO.toEntity(dto);

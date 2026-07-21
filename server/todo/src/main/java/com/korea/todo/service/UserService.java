@@ -29,5 +29,9 @@ public class UserService {
 		}
 		
 		return repository.save(user);
-	} // create ed
+	}
+
+	public UserEntity getByCredentials(String userName, String password) {
+		return repository.findByUserNameAndPassword(userName, password);
+	} // 로그인
 }

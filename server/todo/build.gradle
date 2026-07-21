@@ -22,6 +22,8 @@ dependencies {
 	implementation 'com.google.guava:guava:31.1-jre' // guava
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:4.1.0' // JPA
 	implementation 'com.mysql:mysql-connector-j:9.4.0' // mySQL connect
+   	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5' // JWT
+   	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '3.2.4'
 	
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -32,6 +34,12 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testAnnotationProcessor 'org.projectlombok:lombok'
+	
+	 
+   	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
+   	runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5'
+   	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-gson
+   	implementation group: 'io.jsonwebtoken', name: 'jjwt-gson', version: '0.11.5'
 }
 
 tasks.named('test') {

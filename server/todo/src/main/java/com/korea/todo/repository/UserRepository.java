@@ -5,8 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.korea.todo.entity.UserEntity;
 
 public interface UserRepository extends JpaRepository<UserEntity, String> {
+	// 전달한 아이디를 가지는 데이터 조회
 	UserEntity findByUserName(String userName);
+	// 전달한 아이디를 가지는 데이터가 있는지 검사
 	Boolean existsByUserName(String userName);
+	// 전달한 아이디와 비밀번호를 가지는 데이터 조회
 	UserEntity findByUserNameAndPassword(String userName, String password);
 	
 }
