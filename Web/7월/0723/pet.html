@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="pet.js" defer></script>
+    <link rel="stylesheet" href="pet.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>동물병원 예약</h1>
+        <div class="form-group">
+            <p>동물 이름</p>
+            <input class="inputBox" id="petName">
+            <p>보호자명</p>
+            <input class="inputBox" id="ownerName">
+            <p>동물 종류</p>
+            <input class="inputBox" id="animalType">
+            <p>동물 이름</p>
+            <input class="inputBox" id="reservationDate">
+            <p>동물 이름</p>
+            <input class="inputBox" id="status">
+            <p>금액</p>
+            <input class="inputBox" id="price">
+        </div>
+        <button id="saveBtn">예약 등록하기</button>
+        <hr style="margin-top: 20px;">
+        <div class="reservationList">
+            <table id="reservationTable">
+                <thead>
+                    <tr>
+                        <th>동물 이름</th>
+                        <th>보호자</th>
+                        <th>종류</th>
+                        <th>의사</th>
+                        <th>예약일</th>
+                        <th>상태</th>
+                        <th>금액</th>
+                    </tr>
+                </thead>
+                <tbody id="reservationTbody">
+                    <!-- 자바스크립트로 fetch해온 데이터가 들어갈 자리 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  namespace : 현재 Mapper XML이 어떤 Java 인터페이스와 연결되는지 지정 -->
+<mapper namespace="com.korea.petclinic.dao.ReservationDAO"> 
+	<!-- 전체 조회 -->
+	<select id="findAll" resultType="ReservationVO">
+		SELECT * FROM reservation
+	</select>
+	
+	<!-- id 조회 -->
+	<select id="findById" resultType="ReservationVO">
+		SELECT * FROM reservation WHERE ID = #{id}
+	</select>
+	
+	<!-- 예약 등록 -->
+	<insert id="insert">
+		INSERT INTO reservation (
+        pet_name, 
+        owner_name, 
+        animal_type, 
+        doctor_name, 
+        reservation_date, 
+        status, 
+        price
+    ) VALUES (
+        #{petName},
+        #{ownerName},
+        #{animalType},
+        #{doctorName},
+        #{reservationDate},
+        #{status},
+        #{price}
+    )
+	</insert>
+	
+	<!-- 예약 수정 -->
+	<update id="update">
+		UPDATE reservation SET 
+        pet_name = #{petName},
+        owner_name = #{ownerName},
+        animal_type = #{animalType},
+        doctor_name = #{doctorName},
+        reservation_date = #{reservationDate},
+        status = #{status},
+        price = #{price}
+   		WHERE id = #{id}
+	</update>
+	
+	<!-- 예약 삭제 -->
+	<delete id="delete">
+		DELETE FROM reservation WHERE id = #{id}
+	</delete>
+	
+</mapper>
