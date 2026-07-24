@@ -26,7 +26,7 @@ const loadBtn = document.querySelector("#loadBtn");
 const reservationList = document.querySelector("#reservationList")
 
 const loadReservations = () => {
-    fetch("localhost:10000/reservations")
+    fetch(API_URL)
         .then(res => res.json())
         .then(data => {
             const tbody = document.getElementById("reservationTbody");

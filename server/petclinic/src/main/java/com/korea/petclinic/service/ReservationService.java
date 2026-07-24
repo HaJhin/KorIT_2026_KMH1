@@ -33,6 +33,22 @@ public class ReservationService {
 	public int delete(Long id) {
 		return dao.delete(id);
 	}
+
+	public List<ReservationVO> search(String type, String keyword) {
+		return dao.search(type,keyword);
+	}
+
+	public List<ReservationVO> sort(String sort) {
+		return dao.sort(sort);
+	}
+
+	public int totalPrice() {
+		return dao.totalPrice();
+	}
+
+	public List<ReservationVO> statusCount() {
+		return dao.statusCount();
+	}
 	
 	
 }

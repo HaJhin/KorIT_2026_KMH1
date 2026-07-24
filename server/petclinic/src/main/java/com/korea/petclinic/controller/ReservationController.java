@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.korea.petclinic.service.ReservationService;
@@ -37,13 +38,35 @@ public class ReservationController {
 		return reservationService.insert(vo);
 	}
 	
-	@PutMapping
-	public int update(@RequestBody ReservationVO vo) {
+	@PutMapping("{id}")
+	public int update(@PathVariable Long id, @RequestBody ReservationVO vo) {
+		vo.setId(id);
 		return reservationService.update(vo);
 	}
 	
 	@DeleteMapping("{id}")
 	public int delete(@PathVariable Long id) {
 		return reservationService.delete(id);
+	}
+	
+	@GetMapping("/search-detail")
+	public List<ReservationVO> search(@RequestParam String type, @RequestParam String keyword) {
+		return reservationService.search(type,keyword);
+	}
+	
+	// 진료 예약 정보를 예산 진료비 순으로 정렬
+	@GetMapping("/sort")
+	public List<ReservationVO> sort(@RequestParam(required = false) String sort) {
+		return reservationService.sort(sort);
+	}
+	
+	@GetMapping("/total-price")
+	public int totalPrice() {
+		return reservationService.totalPrice();
+	}
+	
+	@GetMapping("status-count")
+	public List<ReservationVO> statusCount() {
+		return reservationService.statusCount();
 	}
 }

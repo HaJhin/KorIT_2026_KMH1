@@ -1,0 +1,23 @@
+07/27 테스트
+
+서버 프로그램 구현 능력 평가
+범위 : Maven, MyBatis, vo, dao, mapper, servcie, controller, postman
+에러났을때 디버깅 체크
+
+400 : 요청이 잘못된 것 -> 요청 주소, 같이 전달하는 데이터에서 잘못된게 없는지 or 의도와 다르게 Java코드가 작성됐는지 확인
+404 : 경로를 찾지 못함 -> 요청 주소 확인
+500 : 서버쪽 에러 -> 구조를 점검(controller -> mapper)
+
+프로젝트 생성(의존성 필요한 것 주입)
+springweb
+lombok 
+mybatis
+mysqlconnector
+devtools
+
+DB 생성
+테이블 생성
+
+프로젝트 import
+
+구조 구성(vo,dao,service,controller,mapper)

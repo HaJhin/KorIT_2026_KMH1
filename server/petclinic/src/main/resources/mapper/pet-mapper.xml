@@ -54,4 +54,39 @@
 		DELETE FROM reservation WHERE id = #{id}
 	</delete>
 	
+	<!-- 키워드 검색 -->
+	<select id="search" resultType="ReservationVO">
+		SELECT * FROM reservation
+			<where>
+				<choose>
+					<when test="type =='pet'">
+						pet_name LIKE CONCAT('%',#{keyword},'%')
+					</when>
+					<when test="type =='owner'">
+						owner_name LIKE CONCAT('%',#{keyword},'%')
+					</when>
+					<when test="type =='doctor'">
+						doctor_name LIKE CONCAT('%',#{keyword},'%')
+					</when>
+					<otherwise>
+						pet_name LIKE CONCAT('%',#{keyword},'%')
+					</otherwise>
+				</choose>
+			</where>
+	</select>
+	
+	<!-- 예약 정보를 예상 진료비 순으로 정렬 -->
+	<select id="sort" resultType="ReservationVO">
+		SELECT * FROM reservation ORDER BY price ${sort}
+	</select>
+	
+	<!-- 진료비 총 출력 -->
+	<select id="totalPrice">
+		SELECT SUM(price) FROM reservation;
+	</select>
+	
+	<!-- 예약 상태별 개수 출력 -->
+	<select id="statusCount" resultType="map">
+		SELECT status,COUNT(*) as count FROM reservation GROUP BY status
+	</select>
 </mapper>

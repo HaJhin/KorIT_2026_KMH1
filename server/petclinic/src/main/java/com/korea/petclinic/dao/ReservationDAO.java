@@ -17,4 +17,12 @@ public interface ReservationDAO {
 	int update(ReservationVO vo);
 
 	int delete(Long id);
+	
+	List<ReservationVO> search(String type, String keyword);
+
+	List<ReservationVO> sort(String sort);
+
+	int totalPrice();
+
+	List<ReservationVO> statusCount();
 }
